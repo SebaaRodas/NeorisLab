@@ -1,0 +1,57 @@
+<br>
+<br><br>
+<div class="container">
+  <div class="card card border-success">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <h2 class="center" style="color: rgb(24, 92, 24);">Registrar Jornada</h2>
+          <form [formGroup]="formJornada" (ngSubmit)="registrarJornada()">
+            <div class="form-group">
+              <label>Fecha</label>
+              <input type="date" formControlName="fecha" class="form-control">
+              <div *ngIf="formJornada.get('fecha')?.invalid && (formJornada.get('fecha')?.dirty || formJornada.get('fecha')?.touched)" class="alert alert-danger" role="alert">
+                Debes seleccionar una fecha
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Hora de Ingreso</label>
+              <input type="time" formControlName="horaIngreso" class="form-control">
+              <div *ngIf="formJornada.get('horaIngreso')?.invalid && (formJornada.get('horaIngreso')?.dirty || formJornada.get('horaIngreso')?.touched)" class="alert alert-danger" role="alert">
+                Debes seleccionar un horario de entrada
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Hora de Salida</label>
+              <input type="time" formControlName="horaSalida" class="form-control">
+              <div *ngIf="formJornada.get('horaSalida')?.invalid && (formJornada.get('horaSalida')?.dirty || formJornada.get('horaSalida')?.touched)" class="alert alert-danger" role="alert">
+                Debes seleccionar un horario de salida
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Empleado</label>
+              <input type="number" formControlName="idEmpleado" class="form-control">
+              <div *ngIf="formJornada.get('idEmpleado')?.invalid && (formJornada.get('idEmpleado')?.dirty || formJornada.get('idEmpleado')?.touched)" class="alert alert-danger" role="alert">
+                Debes ingresar el id del empleado
+              </div>
+            </div>
+            <label>Tipo Jornada</label>
+            <select type="number" class="form-select" aria-label="Default select example" formControlName="idTipo">
+              <option selected>Seleccione el tipo de jornada</option>
+              <option value="1">Normal</option>
+              <option value="2">Extra</option>
+              <option value="3">Vacaciones</option>
+              <option value="4">Libre</option>
+              <option value="5">Normal y Extra</option>
+            </select>
+            <div *ngIf="formJornada.get('idTipo')?.invalid && (formJornada.get('idTipo')?.dirty || formJornada.get('idTipo')?.touched)" class="alert alert-danger" role="alert">
+              Debes seleccionar el tipo de jornada que desea cargar
+            </div>
+            <br>
+            <div class="centrar"><button type="submit" class="btn btn-outline-success" [disabled]="formJornada.invalid">Registrar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

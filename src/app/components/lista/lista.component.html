@@ -1,0 +1,39 @@
+<br><br><br>
+<h5 style="margin-left: 20px;">Lista de empleados según su id, filtrando el tipo de jornada y la cantidad de horas que trabajó según cada tipo.</h5>
+<ol>
+   ID_TIPO:
+  <li>Normal</li>
+  <li>Extra</li>
+  <li>Vacaciones</li>
+  <li>Libre</li>
+  <li>Normal y Extra</li>
+</ol>
+<div class="container text-center">
+  <div class="row align-items-start" style="background-color: rgb(91, 155, 211);">
+    <div class="col">
+      <h4> ID_EMPLEADO </h4>
+    </div>
+    <div class="col">
+      <h4> ID_TIPO </h4>
+    </div>
+    <div class="col">
+      <h4> CANTIDAD_DE_HORAS </h4>
+    </div>
+  </div>
+  <hr>
+  <div class="row align-items-start">
+    <div class="col">
+      <p *ngFor="let item of listaEmp">{{item.idEmpleado}}</p>
+
+    </div>
+    <div class="col">
+      <p *ngFor="let item of listaEmp">{{item.idTipo}}</p>
+
+    </div>
+    <div class="col">
+      <p *ngFor="let item of listaEmp">{{item.cantHoras}}</p>
+
+    </div>
+    <hr>
+  </div>
+</div>
